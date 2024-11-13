@@ -16,3 +16,5 @@ C:\Users\Kaique\source\repos\UrnaEletronica\UrnaEletronica\obj\Debug\net8.0-wind
 C:\Users\Kaique\source\repos\UrnaEletronica\UrnaEletronica\obj\Debug\net8.0-windows\ref\UrnaEletronica.dll
 C:\Users\Kaique\source\repos\UrnaEletronica\UrnaEletronica\obj\Debug\net8.0-windows\UrnaEletronica.Properties.Resources.resources
 C:\Users\Kaique\source\repos\UrnaEletronica\UrnaEletronica\bin\Debug\net8.0-windows\sons\somUrna.wav
+C:\Users\Kaique\source\repos\UrnaEletronica\UrnaEletronica\obj\Debug\net8.0-windows\UrnaEletronica.sourcelink.json
+C:\Users\Kaique\source\repos\UrnaEletronica\UrnaEletronica\obj\Debug\net8.0-windows\UrnaEletronica.Apuracao.resources

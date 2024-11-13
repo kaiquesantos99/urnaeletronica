@@ -16,7 +16,7 @@ namespace UrnaEletronica
 
 
 
-
+        System.Windows.Forms.Timer timer;
 
         public Form1()
         {
@@ -43,12 +43,19 @@ namespace UrnaEletronica
                 Partido = "PRTB",
                 Foto = Properties.Resources.marcal
             };
-
+            Candidatos c4 = new Candidatos()
+            {
+                Numero = 0000,
+                Candidato = "BRANCO",
+                Partido = "BRANCO",
+                Foto = null
+            };
 
 
             listaCandidatos.Add(c1);
             listaCandidatos.Add(c2);
             listaCandidatos.Add(c3);
+            listaCandidatos.Add(c4);
         }
 
 
@@ -336,15 +343,80 @@ namespace UrnaEletronica
 
         private void btnConfirma_Click(object sender, EventArgs e)
         {
+            if (lblNome.Text.Length > 0)
+            {
+                timer = new System.Windows.Forms.Timer();
+                timer.Interval = 5000;
+                timer.Tick += Timer_Tick;
+                timer.Start();
+
+                tlpVotar.Visible = false;
+                tlpFim.Visible = true;
+                tlpFim.Dock = DockStyle.Fill;
+
+                int candidatoNumber = int.Parse(lblNum.Text + lblNum2.Text);
+
+                // Soma o voto no candidato
+                foreach (Candidatos candidato in listaCandidatos)
+                {
+                    if (candidato.Numero == candidatoNumber)
+                    {
+                        candidato.QtdVotos++;
+                    }
+                }
+                try
+                {
+                    somUrna.Play();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Erro ao reproduzir: " + ex);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Candidato não encontrado!");
+            }
+
+            
+        }
+
+        private void Timer_Tick(object sender, EventArgs e)
+        {
+            lblNum.Text = "";
+            lblNum2.Text = "";
+            lblNome.Text = "";
+            lblPartido.Text = "";
+            pbCandidato.Image = null;
+            tlpVotar.Visible = true;
+            tlpFim.Visible = false;
+            timer.Stop();
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+            new Apuracao(listaCandidatos).Show();
+        }
+
+        private void btnBranco_Click(object sender, EventArgs e)
+        {
+            timer = new System.Windows.Forms.Timer();
+            timer.Interval = 5000;
+            timer.Tick += Timer_Tick;
+            timer.Start();
 
             tlpVotar.Visible = false;
             tlpFim.Visible = true;
             tlpFim.Dock = DockStyle.Fill;
+
+            // Soma o voto no candidato
+            listaCandidatos[3].QtdVotos++;
             try
             {
                 somUrna.Play();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show("Erro ao reproduzir: " + ex);
             }

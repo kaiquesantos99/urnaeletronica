@@ -14,5 +14,7 @@ namespace UrnaEletronica.classes
         public string Partido { get; set; }
 
         public Image Foto { get; set; }
+
+        public int QtdVotos { get; set; } = 0;
     }
 }

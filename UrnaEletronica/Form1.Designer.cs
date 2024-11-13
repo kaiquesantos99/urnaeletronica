@@ -58,6 +58,7 @@
             panMain = new Panel();
             tlpFim = new TableLayoutPanel();
             label4 = new Label();
+            label6 = new Label();
             panel1.SuspendLayout();
             tlpVotar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pbCandidato).BeginInit();
@@ -206,6 +207,7 @@
             btnBranco.TabIndex = 10;
             btnBranco.Text = "BRANCO";
             btnBranco.UseVisualStyleBackColor = false;
+            btnBranco.Click += btnBranco_Click;
             // 
             // btnCorrige
             // 
@@ -313,6 +315,7 @@
             // 
             label2.AutoSize = true;
             label2.Dock = DockStyle.Fill;
+            label2.Font = new Font("Arial", 12F, FontStyle.Bold);
             label2.Location = new Point(104, 24);
             label2.Name = "label2";
             label2.Size = new Size(133, 36);
@@ -324,6 +327,7 @@
             // 
             label3.AutoSize = true;
             label3.Dock = DockStyle.Fill;
+            label3.Font = new Font("Arial", 12F, FontStyle.Bold);
             label3.Location = new Point(3, 105);
             label3.Name = "label3";
             label3.Size = new Size(95, 34);
@@ -335,6 +339,7 @@
             // 
             label5.AutoSize = true;
             label5.Dock = DockStyle.Fill;
+            label5.Font = new Font("Arial", 12F, FontStyle.Bold);
             label5.Location = new Point(3, 139);
             label5.Name = "label5";
             label5.Size = new Size(95, 34);
@@ -362,6 +367,7 @@
             // 
             lblNum2.AutoSize = true;
             lblNum2.Dock = DockStyle.Fill;
+            lblNum2.Font = new Font("Arial Narrow", 12F);
             lblNum2.Location = new Point(45, 1);
             lblNum2.Name = "lblNum2";
             lblNum2.Size = new Size(35, 26);
@@ -372,6 +378,7 @@
             // 
             lblNum.AutoSize = true;
             lblNum.Dock = DockStyle.Fill;
+            lblNum.Font = new Font("Arial Narrow", 12F);
             lblNum.Location = new Point(4, 1);
             lblNum.Name = "lblNum";
             lblNum.Size = new Size(34, 26);
@@ -382,6 +389,7 @@
             // 
             lblNome.AutoSize = true;
             lblNome.Dock = DockStyle.Fill;
+            lblNome.Font = new Font("Arial Narrow", 12F);
             lblNome.Location = new Point(104, 139);
             lblNome.Name = "lblNome";
             lblNome.Size = new Size(133, 34);
@@ -392,6 +400,7 @@
             // 
             lblPartido.AutoSize = true;
             lblPartido.Dock = DockStyle.Fill;
+            lblPartido.Font = new Font("Arial Narrow", 12F);
             lblPartido.Location = new Point(104, 173);
             lblPartido.Name = "lblPartido";
             lblPartido.Size = new Size(133, 34);
@@ -402,6 +411,7 @@
             // 
             label7.AutoSize = true;
             label7.Dock = DockStyle.Fill;
+            label7.Font = new Font("Arial", 12F, FontStyle.Bold);
             label7.Location = new Point(3, 173);
             label7.Name = "label7";
             label7.Size = new Size(95, 34);
@@ -446,11 +456,24 @@
             label4.Text = "FIM";
             label4.TextAlign = ContentAlignment.MiddleCenter;
             // 
+            // label6
+            // 
+            label6.BorderStyle = BorderStyle.FixedSingle;
+            label6.Font = new Font("Arial", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label6.Location = new Point(41, 19);
+            label6.Name = "label6";
+            label6.Size = new Size(715, 59);
+            label6.TabIndex = 16;
+            label6.Text = "URNA ELETRÔNICA";
+            label6.TextAlign = ContentAlignment.MiddleCenter;
+            label6.Click += label6_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(800, 401);
+            Controls.Add(label6);
             Controls.Add(panel1);
             Controls.Add(panMain);
             Name = "Form1";
@@ -500,5 +523,6 @@
         private Panel panMain;
         private TableLayoutPanel tlpFim;
         private Label label4;
+        private Label label6;
     }
 }
